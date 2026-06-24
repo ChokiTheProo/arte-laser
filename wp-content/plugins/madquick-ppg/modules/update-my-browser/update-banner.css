@@ -1,0 +1,251 @@
+/* Top Banner Bar */
+.bnu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999999;
+  display: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bnu-bar.bnu-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Content Wrapper */
+.bnu-content-wrapper {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Content Area */
+.bnu-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Icon */
+.bnu-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  animation: bnu-pulse 2s ease-in-out infinite;
+}
+
+@keyframes bnu-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* Message */
+.bnu-text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.bnu-message {
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Update Button */
+.bnu-download-link {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.bnu-download-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bnu-download-link:active {
+  transform: translateY(0);
+}
+
+/* Close Button */
+.bnu-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+.bnu-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+/* Powered By */
+.bnu-powered-by {
+  font-size: 11px;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.bnu-powered-by a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.bnu-powered-by a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Body Adjustment */
+body.bnu-body-adjusted {
+  padding-top: 70px;
+  transition: padding-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .bnu-content-wrapper {
+    padding: 14px 18px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .bnu-content {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .bnu-icon {
+    font-size: 32px;
+  }
+
+  .bnu-text {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .bnu-message {
+    font-size: 14px;
+    min-width: auto;
+  }
+
+  .bnu-download-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .bnu-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .bnu-powered-by {
+    text-align: center;
+    font-size: 10px;
+  }
+
+  body.bnu-body-adjusted {
+    padding-top: 140px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .bnu-bar {
+    background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .bnu-bar,
+  .bnu-download-link,
+  .bnu-close,
+  body.bnu-body-adjusted {
+    transition: none;
+  }
+
+  .bnu-icon {
+    animation: none;
+  }
+
+  .bnu-close:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .bnu-bar {
+    background: #000;
+    border-bottom: 3px solid #fff;
+  }
+
+  .bnu-download-link {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+}
+
+/* Reset */
+.bnu-bar * {
+  box-sizing: border-box !important;
+}
