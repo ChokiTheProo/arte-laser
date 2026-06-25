@@ -115,7 +115,19 @@ var _zxcvbnSettings = {"src":"./wp-includes/js/zxcvbn.min.js"};
 @font-face{font-family:Manrope;font-style:normal;font-weight:200 800;font-display:fallback;src:url('./wp-content/themes/twentytwentyfive/assets/fonts/manrope/Manrope-VariableFont_wght.woff2') format('woff2');}
 @font-face{font-family:"Fira Code";font-style:normal;font-weight:300 700;font-display:fallback;src:url('./wp-content/themes/twentytwentyfive/assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2') format('woff2');}
 </style>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<style id="mobile-fixes">
+	/* Evita rolagem horizontal (slides do carrossel que vazam) */
+	html, body { overflow-x: hidden; max-width: 100%; }
+	.swiper, .elementor-image-carousel-wrapper, .elementor-widget-image-carousel .swiper { overflow: hidden !important; }
+	img { max-width: 100%; height: auto; }
+	@media (max-width: 767px) {
+		/* Respiro nas laterais para o box de moneda local e cartões */
+		.moneda-local-box { margin-left: 14px !important; margin-right: 14px !important; padding: 14px 16px !important; }
+		.moneda-local-box > div:last-child > div:first-child { font-size: 14px !important; }
+		.moneda-local-box > div:last-child > div:last-child { font-size: 12.5px !important; }
+	}
+	</style></head>
 <body class="wp-singular page-template page-template-elementor_canvas page page-id-1795 wp-embed-responsive wp-theme-twentytwentyfive elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-1795">
 	<?xml encoding="UTF-8"><div data-elementor-type="wp-page" data-elementor-id="1795" class="elementor elementor-1795" data-elementor-post-type="page">
 		<div class="elementor-element elementor-element-3524cffd e-flex e-con-boxed e-con e-parent" data-id="3524cffd" data-element_type="container" data-e-type="container" data-settings='{"background_background":"classic"}'>
@@ -570,15 +582,6 @@ var _zxcvbnSettings = {"src":"./wp-includes/js/zxcvbn.min.js"};
 					<h2 class="elementor-heading-title elementor-size-default">US$ 7,90</h2>				</div>
 				<div class="elementor-element elementor-element-3d377027 elementor-widget elementor-widget-text-editor" data-id="3d377027" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 									<p>Pago único · Acceso inmediato</p>								</div>
-				<div class="elementor-element elementor-element-4bb4d2c0 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="4bb4d2c0" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
-							<ul class="elementor-icon-list-items">
-							<li class="elementor-icon-list-item">
-											<span class="elementor-icon-list-icon">
-							<svg aria-hidden="true" class="e-font-icon-svg e-fas-circle" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path></svg>						</span>
-										<span class="elementor-icon-list-text">Ahorras <b>US$ 12,00</b></span>
-									</li>
-						</ul>
-						</div>
 				<div class="elementor-element elementor-element-4fda8a3b e-transform elementor-mobile-align-justify elementor-invisible elementor-widget elementor-widget-button" data-id="4fda8a3b" data-element_type="widget" data-e-type="widget" data-settings='{"_animation":"pulse","_transform_scale_effect_hover":{"unit":"px","size":1.05,"sizes":[]},"_transform_scale_effect_hover_tablet":{"unit":"px","size":"","sizes":[]},"_transform_scale_effect_hover_mobile":{"unit":"px","size":"","sizes":[]}}' data-widget_type="button.default">
 										<a class="elementor-button elementor-button-link elementor-size-sm" href="https://pay.hotmart.com/O106463435I?checkoutMode=10" rel="nofollow noreferrer">
 						<span class="elementor-button-content-wrapper">
